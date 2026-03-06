@@ -1,0 +1,54 @@
+@import url('https://fonts.cdnfonts.com/css/digital-numbers');
+
+.board{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #808080;
+  border-radius: .5rem;
+  width: 40%;
+  padding: 0 2rem;
+  cursor: not-allowed !important;
+
+  .time-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    .miliSeconds{
+        font-family: 'Digital Numbers', Arial, Helvetica, sans-serif;
+        font-size: 17px;                                            
+      }
+    .Seconds{
+        font-family: 'Digital Numbers', Arial, Helvetica, sans-serif;
+        font-size: 19px;                                            
+      }
+  }
+  
+}
+
+
+.btn{
+  display: flex;
+  gap: 1rem;
+  .btn-start, .btn-stop, .btn-reverse, .btn-pause{
+    cursor: pointer;
+    background: green;
+    width: 7rem;
+    height: 2rem;
+    border-radius: .3rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .btn-stop{
+    background: red;
+  }
+  .btn-pause{
+    background: #000;
+  }
+  .btn-reverse{
+    background: teal;
+  }
+}
