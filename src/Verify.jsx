@@ -25,7 +25,7 @@ const Verify = () => {
     <div>
       {ticketCode?.id}
       {ticketCode?.code}
-      {ticketCode? 'success' : 'Used'}
+      {ticketCode?.status? 'success' : 'Used'}
     </div>
   )
 }
