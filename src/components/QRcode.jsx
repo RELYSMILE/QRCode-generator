@@ -22,10 +22,10 @@ const QRcode = () => {
   }, [])
   return (
     <div>
-      <QRCode value={`https://qrcode-generator-generic.netlify.app/verify/${ticket?.code}`} size={150} />
-      <Link to={`verify/${ticket?.code}`}>Verify</Link>
+      <QRCode value={`https://qrcode-generator-generic.netlify.app/verify/${ticket?.id}`} size={150} />
+      <Link to={`verify/${ticket?.id}`}>Verify</Link>
+      <div>{ticket?.id}</div>
       <div>{ticket?.code}</div>
-      <div>{ticket?.status}</div>
     </div>
   )
 }
