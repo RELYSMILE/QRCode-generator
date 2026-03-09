@@ -14,11 +14,13 @@ const Verify = () => {
          if(ticketRef.exists()){
           setTicketCode(ticketRef.data())
          }
-
-         await updateDoc(doc(db, 'tickets', id), {
-          status: false,
-          usedAt: serverTimestamp(),
-         })
+         if (ticketCode.status){
+            await updateDoc(doc(db, 'tickets', id), {
+              status: false,
+              usedAt: serverTimestamp(),
+            })
+          }
+          console.log(ticketCode.status)
   
         }catch(err){
           console.log(err.message)
