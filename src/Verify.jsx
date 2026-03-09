@@ -1,4 +1,4 @@
-import { doc, getDoc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { db } from './components/Servers/Config/Database'
@@ -14,9 +14,11 @@ const Verify = () => {
          if(ticketRef.exists()){
           setTicketCode(ticketRef.data())
          }
+         if (!ticketCode?.status) return
 
          await updateDoc(doc(db, 'tickets', id), {
           status: false,
+          usedAt: serverTimestamp(),
          })
   
         }catch(err){
