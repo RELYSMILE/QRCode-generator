@@ -14,6 +14,7 @@ const Verify = () => {
          if(ticketRef.exists()){
           setTicketCode(ticketRef.data())
          }
+         if (ticketCode.status === false) return;
 
          await updateDoc(doc(db, 'tickets', id), {
           status: false,
